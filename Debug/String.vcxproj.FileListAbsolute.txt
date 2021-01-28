@@ -1,0 +1,2 @@
+D:\My proects\String\Debug\String.exe
+D:\My proects\String\Debug\String.pdb

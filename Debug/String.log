@@ -1,0 +1,6 @@
+﻿  main.cpp
+D:\My proects\String\String.h(64,12): warning C4018: <: несоответствие типов со знаком и без знака
+D:\My proects\String\String.h(66,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\My proects\String\String.h(79,12): warning C4018: <: несоответствие типов со знаком и без знака
+D:\My proects\String\String.h(81,21): warning C4018: <: несоответствие типов со знаком и без знака
+  String.vcxproj -> D:\My proects\String\Debug\String.exe
