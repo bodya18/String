@@ -1,5 +1,5 @@
 #pragma once
-
+#define _CRT_SECURE_NO_WARNINGS
 class String
 {
 public:
@@ -142,6 +142,15 @@ public:
 	int find(const char* other, int pos = 0) //searches the first occurrence of the symbol
 	{
 
+		if (pos >= length)
+			return -1;
+		else
+		{
+			for (int i = pos; i < length; i++)
+				if (str[i] == *other)
+					return pos+i;
+			return -1;
+		}
 	}
 private:
 	char* str;

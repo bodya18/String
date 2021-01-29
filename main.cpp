@@ -6,5 +6,5 @@ int main()
 {
 	String str1("vitalya");
 	String str2("lya");
-	cout << str1.find(str2);
+	cout << str1.find("e");
 }
