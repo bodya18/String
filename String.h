@@ -1,5 +1,5 @@
 #pragma once
-
+#define _CRT_SECURE_NO_WARNINGS
 class String
 {
 public:
@@ -26,9 +26,7 @@ public:
 	}
 	~String()
 	{
-		delete[] this->str;
-		length = 0;
-		str = 0;
+		clear();
 	}
 	void Print()
 	{
@@ -104,6 +102,47 @@ public:
 	}
 	char& operator [](int index) { return this->str[index]; }
 	bool is_empty() { return (this->str == 0) || (str[0] == '\0'); }
+	void clear()
+	{
+		delete[] this->str;
+		length = 0;
+		str = 0;
+	}
+	int find(const String& other, int pos = 0) //searches the first occurrence of the sequence
+	{
+		if (pos >= length||other.length > length)
+			return -1;
+		else
+		{
+			char *current = new char[other.length+1];
+			for (int i = 0; i < other.length; i++)
+				current[i] = str[pos + i];
+			current[other.length] = '\0';
+			for (int i = 0; i < length; i++)
+			{
+				int count = 0;
+				for (int k = 0; k < other.length; k++)
+				{
+					if (current[k] == other.str[k])
+						count++;
+					if (count == other.length)
+						return pos + i;
+				}
+				for (int j = 0; j < strlen(current); j++)
+				{
+					if (j == strlen(current) - 1)
+						current[j] = str[pos + other.length + i];
+					else
+						current[j] = current[j + 1];
+				}
+			}
+			return -1;	
+		}
+	}
+	int find(const char* other, int pos = 0) //searches the first occurrence of the symbol
+	{
+
+	}
 private:
 	char* str;
 	int length;

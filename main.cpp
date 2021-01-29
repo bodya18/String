@@ -5,5 +5,6 @@ using namespace std;
 int main()
 {
 	String str1("vitalya");
-	String str2("");
+	String str2("lya");
+	cout << str1.find(str2);
 }
